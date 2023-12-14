@@ -51,7 +51,7 @@ class Player extends GameObject {
     }
 
     // Handle player jumping
-    if (!this.isGamepadJump && input.isKeyDown('ArrowUp') && this.isOnPlatform) {
+    if (!this.isGamepadJump && (input.isKeyDown('ArrowUp') || input.mouse.mousedown === true) && this.isOnPlatform) {
       this.startJump();
     }
 
