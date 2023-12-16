@@ -27,8 +27,8 @@ class Game {
 
   // This method resizes the canvas to fill the window, with a small margin.
   resizeCanvas() {
-    this.canvas.width = window.innerWidth - 50;
-    this.canvas.height = window.innerHeight - 50;
+    this.canvas.width = 1280;
+    this.canvas.height = 768;
   }
 
   // This method starts the game loop.
