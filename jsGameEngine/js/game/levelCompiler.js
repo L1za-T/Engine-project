@@ -6,6 +6,7 @@ import PlayerUI from './playerUI.js';
 import Platform from './platform.js';
 import Collectible from './collectible.js';
 import LevelBuild from "./levelBuild.js";
+import Enemy2 from "./enemy2.js";
 
 // Define a class LevelCompiler that extends the Game class from the engine
 class LevelCompiler extends Game {
@@ -27,7 +28,7 @@ class LevelCompiler extends Game {
     this.addGameObject(new PlayerUI(10, 10));
 
     // Set the game's camera target to the player
-    this.camera.target = player;
+    this.camera.target = levelBackground;
 
     // Define the platform's width and the gap between platforms
     const platformWidth = 200;
@@ -46,9 +47,9 @@ class LevelCompiler extends Game {
     }
 
     // Create enemies and add them to the game
-    this.addGameObject(new Enemy(50, this.canvas.height - 90));
-    this.addGameObject(new Enemy(platformWidth + gap + 50, this.canvas.height - 90));
-    this.addGameObject(new Enemy(2 * (platformWidth + gap) + 50, this.canvas.height - 90));
+    this.addGameObject(new Enemy(50,90));
+
+    this.addGameObject(new Enemy2(200,160,1523,483));
 
     // Create collectibles and add them to the game
     this.addGameObject(new Collectible(250, this.canvas.height - 100, 20, 20));
