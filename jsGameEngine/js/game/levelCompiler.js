@@ -55,6 +55,8 @@ class LevelCompiler extends Game {
     this.addGameObject(new Collectible(250, this.canvas.height - 100, 20, 20));
     this.addGameObject(new Collectible(450, this.canvas.height - 100, 20, 20));
     this.addGameObject(new Collectible(650, this.canvas.height - 100, 20, 20));
+
+
   }
 
 }

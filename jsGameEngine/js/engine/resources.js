@@ -1,3 +1,4 @@
+// import Desertmapplacements from "../../resources/leveldata/desertmapplacements.js";
 // Create an Images object to hold the Image instances for the player and the enemy.
 const Images = {
   player: new Image(), // The Image instance for the player.
@@ -25,4 +26,4 @@ Images.map.src = './resources/images/map/S_map.png';
 
 
 // Export the Images and AudioFiles objects, so they can be imported and used in other modules.
-export { Images, LevelData /*,AudioFiles*/ };
+export { Images, LevelData, /*,AudioFiles*/ };

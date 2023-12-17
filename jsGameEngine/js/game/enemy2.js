@@ -53,8 +53,6 @@ class Enemy2 extends GameObject{
             physics.velocity.y = -50;
         }
 
-        console.log(this.waypointIndex);
-
         super.update(deltaTime);
     }
 }

@@ -11,10 +11,10 @@ class EnemySpawner extends GameObject{
         this.enemies = [];
         this.enemyRespawnTime = 0.5;
         this.spawnedEnemyCount = 0;
+
         this.addComponent(new Renderer('green', 50, 50, Images.enemy));
 
     }
-
 
     spawnEnemies() {
         if (this.spawnedEnemyCount < this.numEnemies) {
@@ -26,14 +26,13 @@ class EnemySpawner extends GameObject{
     update(deltaTime) {
         this.enemyRespawnTime -= deltaTime;
 
-        this.enemies.forEach(() => {this.getComponent(Renderer)});
         if(this.enemyRespawnTime <= 0) {
+
             this.spawnEnemies();
             this.enemyRespawnTime = 0.5;
-
-            console.log(this.spawnedEnemyCount);
         }
 
+        this.enemies.forEach(() => {this.getComponent(Renderer).draw(this.ctx)});
         super.update(deltaTime)
     }
 }
