@@ -5,15 +5,20 @@ import Enemy from './enemy.js';
 import PlayerUI from './playerUI.js';
 import Platform from './platform.js';
 import Collectible from './collectible.js';
+import LevelBuild from "./levelBuild.js";
 
-// Define a class Level that extends the Game class from the engine
-class Level extends Game {
+// Define a class LevelCompiler that extends the Game class from the engine
+class LevelCompiler extends Game {
   
   // Define the constructor for this class, which takes one argument for the canvas ID
   constructor(canvasId) {
     // Call the constructor of the superclass (Game) with the canvas ID
     super(canvasId);
-    
+
+    // Draw the level background image
+    const levelBackground = new LevelBuild(0,0);
+    this.addGameObject(levelBackground);
+
     // Create a player object and add it to the game
     const player = new Player(this.canvas.width / 2 - 25, this.canvas.height / 2 - 25);
     this.addGameObject(player);
@@ -53,5 +58,5 @@ class Level extends Game {
   
 }
 
-// Export the Level class as the default export of this module
-export default Level;
+// Export the LevelCompiler class as the default export of this module
+export default LevelCompiler;

@@ -1,8 +1,8 @@
-// Import the Level class from './game/level.js'.
-import Level from './game/level.js';
+// Import the LevelCompiler class from './game/levelCompiler.js'.
+import LevelCompiler from './game/levelCompiler.js';
 
-// Create a new instance of the Level class with 'gameCanvas' as the canvas ID.
-const game = new Level('gameCanvas');
+// Create a new instance of the LevelCompiler class with 'gameCanvas' as the canvas ID.
+const game = new LevelCompiler('gameCanvas');
 
-// Start the game by calling the start method of the Level instance.
+// Start the game by calling the start method of the LevelCompiler instance.
 game.start();

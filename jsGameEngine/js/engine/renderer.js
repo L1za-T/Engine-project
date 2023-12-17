@@ -14,7 +14,7 @@ class Renderer extends Component {
 
   // The draw method handles rendering the game object on the canvas.
   draw(ctx) {
-    // If an image is provided and it has finished loading, draw the image.
+    // If an image is provided, and it has finished loading, draw the image.
     if (this.image && this.image.complete) {
       // Get the position and dimensions of the game object.
       const x = this.gameObject.x;
@@ -37,7 +37,7 @@ class Renderer extends Component {
         ctx.restore();
       }
     } else {
-      // If no image is provided or it has not finished loading, draw a rectangle with the specified color.
+      // If no image is provided, or it has not finished loading, draw a rectangle with the specified color.
       ctx.fillStyle = this.color;
       ctx.fillRect(this.gameObject.x, this.gameObject.y, this.width, this.height);
     }
