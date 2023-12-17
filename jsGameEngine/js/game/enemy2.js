@@ -3,7 +3,6 @@ import Renderer from "../engine/renderer.js";
 import {Images} from "../engine/resources.js";
 import Physics from "../engine/physics.js";
 import {LevelData} from "../engine/resources.js";
-
 class Enemy2 extends GameObject{
     constructor(x,y) {
         super(x,y);
@@ -13,12 +12,13 @@ class Enemy2 extends GameObject{
         this.y = LevelData[1].y;
 
         this.waypointIndex =1;
+
         this.renderer = new Renderer('green', 50, 50, Images.enemy);
         this.addComponent(this.renderer);
 
         //Defines end coordinates for the enemy, when it reaches them it is de-spawned and a life is lost.
         this.endCoordX = LevelData[LevelData.length-1].x;
-        this.endCoordY = LevelData[LevelData.length-1].y;
+        // this.endCoordY = LevelData[LevelData.length-1].y;
 
         this.addComponent(new Physics({ x: 50, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }));
 
@@ -51,6 +51,12 @@ class Enemy2 extends GameObject{
             physics.velocity.y = 50;
         } else {
             physics.velocity.y = -50;
+        }
+
+        //deletes enemies if they went past the last waypoint
+
+        if(this.x > this.endCoordX){
+            this.game.removeGameObject(this);
         }
 
         super.update(deltaTime);

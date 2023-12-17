@@ -35,14 +35,17 @@ function getTileData() {
   for (let i = 0; i < levelPlacements.length; i += 20) {
     placementTilesData.push(levelPlacements.slice(i, i + 20));
   }
+  return placementTilesData;
   // console.log(placementTilesData)
 }
+
+
 
 // Set the source of the player image.
 Images.player.src = './resources/images/player/player.png'; // Update the image path
 
 // Set the source of the enemy image.
-Images.enemy.src = './resources/images/enemy/enemy.png'; // Update the image path
+Images.enemy.src = './resources/images/enemy/orc.gif'; // Update the image path
 
 Images.map.src = './resources/images/map/S_map.png';
 

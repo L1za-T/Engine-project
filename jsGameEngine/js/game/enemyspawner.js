@@ -1,7 +1,5 @@
 import Enemy2 from "./enemy2.js";
 import GameObject from "../engine/gameobject.js";
-import Renderer from "../engine/renderer.js";
-import {Images} from "../engine/resources.js";
 import game from "../engine/game.js";
 
 class EnemySpawner extends GameObject{
@@ -12,7 +10,6 @@ class EnemySpawner extends GameObject{
         this.enemyRespawnTime = 0.75;
         this.spawnedEnemyCount = 0;
 
-        this.addComponent(new Renderer('green', 50, 50, Images.enemy));
         this.addComponent(game);
 
     }
@@ -33,9 +30,11 @@ class EnemySpawner extends GameObject{
             this.enemyRespawnTime = 0.75;
         }
 
-    }
-    draw(){
+        console.log(this.numEnemies);
 
+    }
+
+    draw(){
     }
 }
 export default EnemySpawner;
