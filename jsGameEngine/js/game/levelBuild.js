@@ -8,5 +8,6 @@ class LevelBuild extends GameObject {
         this.renderer = new Renderer('black', 1280, 768, Images.map);
         this.addComponent(this.renderer);
     }
+
 }
 export default LevelBuild;

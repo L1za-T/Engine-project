@@ -3,10 +3,9 @@ import Game from '../engine/game.js';
 import Player from './player.js';
 import PlayerUI from './playerUI.js';
 import Platform from './platform.js';
-import Collectible from './collectible.js';
 import LevelBuild from "./levelBuild.js";
 import EnemySpawner from "./enemyspawner.js";
-import {LevelData} from "../engine/resources.js";
+import {LevelData,getTileData} from "../engine/resources.js";
 
 // Define a class LevelCompiler that extends the Game class from the engine
 class LevelCompiler extends Game {
@@ -48,18 +47,13 @@ class LevelCompiler extends Game {
 
     // Create enemies and add them to the game
 
-    this.addGameObject(new EnemySpawner(LevelData[1].x-20,LevelData[1].y,10));
-    console.log(LevelData[1].x-20,this.y = LevelData[1].y)
-
-    // Create collectibles and add them to the game
-    this.addGameObject(new Collectible(250, this.canvas.height - 100, 20, 20));
-    this.addGameObject(new Collectible(450, this.canvas.height - 100, 20, 20));
-    this.addGameObject(new Collectible(650, this.canvas.height - 100, 20, 20));
-
-
+    this.addGameObject(new EnemySpawner(LevelData[1].x-20,LevelData[1].y, 10, this));
+    getTileData();
   }
+
 
 }
 
 // Export the LevelCompiler class as the default export of this module
 export default LevelCompiler;
+

@@ -1,4 +1,3 @@
-// import Desertmapplacements from "../../resources/leveldata/desertmapplacements.js";
 // Create an Images object to hold the Image instances for the player and the enemy.
 const Images = {
   player: new Image(), // The Image instance for the player.
@@ -15,6 +14,30 @@ const LevelData = await fetch('./resources/leveldata/desertmap.json').then(respo
 //   // Add more audio file paths as needed
 // };
 
+//Gets the placeable squares on the current map.
+  const levelPlacements =
+      [0, 0, 14, 0, 14, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 0,
+        0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 0,
+        0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 0,
+        0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 14, 0, 14, 0, 0, 0, 0, 14, 0,
+        0, 14, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 14, 0,
+        0, 14, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 14, 0,
+        0, 14, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0,
+        0, 14, 0, 0, 0, 0, 14, 0, 14, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0,
+        0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0,
+        0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0,
+        0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 14, 0, 14, 0, 14, 0, 14, 0, 14, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0]
+
+function getTileData() {
+//puts them in a 2d array (or array of arrays)
+  const placementTilesData = [];
+  for (let i = 0; i < levelPlacements.length; i += 20) {
+    placementTilesData.push(levelPlacements.slice(i, i + 20));
+  }
+  // console.log(placementTilesData)
+}
+
 // Set the source of the player image.
 Images.player.src = './resources/images/player/player.png'; // Update the image path
 
@@ -26,4 +49,4 @@ Images.map.src = './resources/images/map/S_map.png';
 
 
 // Export the Images and AudioFiles objects, so they can be imported and used in other modules.
-export { Images, LevelData, /*,AudioFiles*/ };
+export { Images, LevelData, getTileData/*,AudioFiles*/ };

@@ -9,8 +9,8 @@ class Enemy2 extends GameObject{
         super(x,y);
 
         //Defines enemy start coordinates. Yes I know normally those are passed in, but in this case it makes it easier if they aren't
-        // this.x = LevelData[1].x;
-        // this.y = LevelData[1].y;
+        this.x = LevelData[1].x;
+        this.y = LevelData[1].y;
 
         this.waypointIndex =1;
         this.renderer = new Renderer('green', 50, 50, Images.enemy);
