@@ -1,4 +1,5 @@
-// import Desertmapplacements from "../../resources/leveldata/desertmapplacements.js";
+import DesertMapPlacements from "../../resources/leveldata/desertmapplacements.js";
+
 // Create an Images object to hold the Image instances for the player and the enemy.
 const Images = {
   player: new Image(), // The Image instance for the player.
@@ -15,6 +16,7 @@ const LevelData = await fetch('./resources/leveldata/desertmap.json').then(respo
 //   // Add more audio file paths as needed
 // };
 
+let testString = console.log('')
 // Set the source of the player image.
 Images.player.src = './resources/images/player/player.png'; // Update the image path
 
@@ -26,4 +28,4 @@ Images.map.src = './resources/images/map/S_map.png';
 
 
 // Export the Images and AudioFiles objects, so they can be imported and used in other modules.
-export { Images, LevelData, /*,AudioFiles*/ };
+export { Images, LevelData/*,AudioFiles*/ };

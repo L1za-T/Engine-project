@@ -49,7 +49,6 @@ class LevelCompiler extends Game {
     // Create enemies and add them to the game
 
     this.addGameObject(new EnemySpawner(LevelData[1].x-20,LevelData[1].y,10));
-    console.log(LevelData[1].x-20,this.y = LevelData[1].y)
 
     // Create collectibles and add them to the game
     this.addGameObject(new Collectible(250, this.canvas.height - 100, 20, 20));
