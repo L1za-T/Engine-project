@@ -9,8 +9,8 @@ class Enemy2 extends GameObject{
         super(x,y);
 
         //Defines enemy start coordinates. Yes I know normally those are passed in, but in this case it makes it easier if they aren't
-        this.x = LevelData[1].x
-        this.y = LevelData[1].y
+        // this.x = LevelData[1].x;
+        // this.y = LevelData[1].y;
 
         this.waypointIndex =1;
         this.renderer = new Renderer('green', 50, 50, Images.enemy);
@@ -19,17 +19,14 @@ class Enemy2 extends GameObject{
         //Defines end coordinates for the enemy, when it reaches them it is de-spawned and a life is lost.
         this.endCoordX = LevelData[LevelData.length-1].x;
         this.endCoordY = LevelData[LevelData.length-1].y;
-        
+
         this.addComponent(new Physics({ x: 50, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }));
 
-        this.movementDistance = 0;
     }
 
     update(deltaTime) {
 
         const physics = this.getComponent(Physics);
-
-
 
         //enemy pathfinding logic.
         const nextWaypoint = LevelData[this.waypointIndex];
@@ -55,6 +52,8 @@ class Enemy2 extends GameObject{
         } else {
             physics.velocity.y = -50;
         }
+
+        console.log(this.waypointIndex);
 
         super.update(deltaTime);
     }
